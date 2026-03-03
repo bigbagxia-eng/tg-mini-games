@@ -1,1 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no" />
+  <title>TG Mini Games</title>
+  <link rel="stylesheet" href="app.css" />
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">
+        <div class="dot"></div>
+        <div>
+          <div class="title">Mini Games</div>
+          <div class="subtitle" id="subtitle">Загрузка…</div>
+        </div>
+      </div>
 
+      <div class="tabs">
+        <button class="tab active" data-game="snake">Змейка</button>
+        <button class="tab" data-game="runner">Runner</button>
+        <button class="tab" data-game="match3">3-в-ряд</button>
+      </div>
+    </header>
+
+    <main class="stage">
+      <canvas id="c"></canvas>
+
+      <div class="hud">
+        <div class="chip" id="chipLeft">Score: 0</div>
+        <div class="chip" id="chipCenter">Best: 0</div>
+        <div class="chip" id="chipRight">Top: …</div>
+      </div>
+
+      <div class="overlay" id="overlay">
+        <div class="panel">
+          <div class="panelTitle" id="panelTitle">Mini Games</div>
+          <div class="panelText" id="panelText">Нажми “Играть”</div>
+          <div class="panelBtns">
+            <button id="btnPlay" class="btn primary">Играть</button>
+            <button id="btnLeaderboard" class="btn">Рейтинг</button>
+          </div>
+          <div class="lb" id="lb" hidden></div>
+        </div>
+      </div>
+
+      <!-- мобильные кнопки управления (авто-показываются) -->
+      <div class="touch" id="touch" hidden>
+        <button class="tbtn" data-act="left">⟵</button>
+        <button class="tbtn" data-act="up">⟰</button>
+        <button class="tbtn" data-act="down">⟱</button>
+        <button class="tbtn" data-act="right">⟶</button>
+        <button class="tbtn wide" data-act="action">●</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
